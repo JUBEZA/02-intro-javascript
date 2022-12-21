@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// Desestructuracion
+// asignacion desestructurante
+const persona = {
+  nombre: 'tony',
+  edad: 45,
+  clave: 'ironman',
+  rango: 'soldado',
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// const { edad, clave, nombre, } = persona;
+
+// console.log( nombre );
+// console.log( edad );
+// console.log( clave );
+
+const useContext = ({ clave, nombre, edad, rango = '(pirata)'}) => {
+
+  // console.log( nombre, edad, rango)
+
+  return {
+    nombreClave: clave,
+    anios: edad
+    latlng: {
+      lat: 14.1234
+      lng: -12.3424
+    }
+  }
+
+};
+
+const { nombreClave, anios, latlng:{ lat, lng} } = useContext( persona );
+
+console.log( nombreClave, anios);
+console.log( lat, lng );
